@@ -1,8 +1,12 @@
 version: "3.9"
 services:
-  front:
+  frontend:
     build: ./frontend
     ports:
-      - "8000:5000"
-  back:
+      - 80:80
+  backend:
     build: ./backend
+    ports:
+      - 80:80
+  proxy:
+    build: ./nginx
